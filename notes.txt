@@ -1,0 +1,44 @@
+1- create venv
+python3 -m venv venv
+source venv/bin/activate
+
+
+2- install packages
+pip install fastapi[all]
+
+
+3- run the webserver
+fastapi dev or 0$ uvicorn main:app --reload
+
+
+4- decorator
+
+
+5- http methods
+get, post, put, delete
+
+
+6- path operation
+@app.get("/")
+
+
+7- in fastAPI order matters
+
+
+8- always use plural while creating paths, for example:
+/posts not /post
+
+9- diffrence between put and patch:
+for put you should provide all fiels, 
+while for patch you can only provide the field you wanna update.
+
+
+10- swagger ui = fast api default documentation:
+http://127.0.0.1:8000/docs#/
+http://127.0.0.1:8000/redoc
+
+11- python package: a folder with __init__.py file
+
+12- we do not interact with DB directly, we make use of DBMS to do that
+
+13- DBMS: Relational and NoSQL
