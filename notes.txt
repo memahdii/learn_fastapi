@@ -1,44 +1,86 @@
 1- create venv
-python3 -m venv venv
-source venv/bin/activate
-
+    python3 -m venv venv
+    source venv/bin/activate
 
 2- install packages
-pip install fastapi[all]
-
+    pip install fastapi[all]
 
 3- run the webserver
-fastapi dev or 0$ uvicorn main:app --reload
-
+    fastapi dev or 0$ uvicorn main:app --reload
 
 4- decorator
 
-
 5- http methods
-get, post, put, delete
-
+    get, post, put, delete
 
 6- path operation
-@app.get("/")
-
+    @app.get("/")
 
 7- in fastAPI order matters
-
 
 8- always use plural while creating paths, for example:
 /posts not /post
 
 9- diffrence between put and patch:
-for put you should provide all fiels, 
-while for patch you can only provide the field you wanna update.
-
+    for put you should provide all fiels, 
+    while for patch you can only provide the field you wanna update.
 
 10- swagger ui = fast api default documentation:
-http://127.0.0.1:8000/docs#/
-http://127.0.0.1:8000/redoc
+    http://127.0.0.1:8000/docs#/
+    http://127.0.0.1:8000/redoc
 
-11- python package: a folder with __init__.py file
+11- python package:
+    a folder with __init__.py file
 
 12- we do not interact with DB directly, we make use of DBMS to do that
 
-13- DBMS: Relational and NoSQL
+13- DBMS: Relational and NoSQL 
+
+14- Table:
+    it represents a subject or event in as app
+    the table is made up of columns and rows...
+    each column: represents a different attribute
+    each row: represents a different entry in the table
+
+    primary key: is a column or group of columns that uniquely identifies
+        each row in a table
+        - tables can have one and only one pk
+
+    unique constraints: it can be applied to any column to make sure every
+        record has a unique value for that column
+
+    null constraints: use NOT NULL constraint to ensure the column never left blank
+
+    create postgres user:
+    sudo -u postgres psql
+    change the password:
+    alter user postgres with password 'password';
+
+    SQL COMMAANDS EXAMPLE:
+    -- SELECT name AS product_name FROM products
+    -- SELECT * FROM products; 
+    -- SELECT * FROM products WHERE id = 4; 
+    -- SELECT * FROM products WHERE inventory = 0;
+    -- SELECT * FROM products WHERE name = 'TV';
+    -- SELECT * FROM products WHERE price <= 80;
+    -- SELECT * FROM products WHERE inventory != 0;
+    SELECT * FROM products WHERE id IN (1,2,3);
+
+
+SQL:
+    insert into 
+    update set
+    delete from
+    SELECT from limit offset returning
+
+when wanna work with postgres in python app:
+    we need postgres driver: Psycopg
+
+    anytime you wanna change the db you have to commit it: conn.commit()
+
+
+workng with databases:
+    1: drivers like: default postgres driver
+    2: ORM (object relational mapper): 
+        - we can define our tables as python models
+        - queries can be made through python code
