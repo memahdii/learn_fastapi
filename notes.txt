@@ -81,6 +81,12 @@ when wanna work with postgres in python app:
 
 workng with databases:
     1: drivers like: default postgres driver
-    2: ORM (object relational mapper): 
+    2: ORM (object relational mapper): such as sqlalchemy
         - we can define our tables as python models
         - queries can be made through python code
+
+
+pip freeze:
+    returns the packages installed for this app
+
+
